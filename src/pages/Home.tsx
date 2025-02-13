@@ -1,14 +1,12 @@
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from 'react-router-dom'
 
 export default function Home() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   return (
     <>
       <div>Home page</div>
-      <button onClick={() => navigate('/dictionaries')}>
-        Dictionary
-      </button>
+      <button onClick={() => navigate('/dictionaries')}>Dictionary</button>
     </>
   )
 }

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from 'react'
 
 export const Posts: React.FC = () => {
   const [posts, setPosts] = useState([])
@@ -7,7 +7,10 @@ export const Posts: React.FC = () => {
     const abortController = new AbortController()
     const fetchData = async () => {
       try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/posts', { signal: abortController.signal })
+        const response = await fetch(
+          'https://jsonplaceholder.typicode.com/posts',
+          { signal: abortController.signal }
+        )
         if (!abortController.signal.aborted) {
           const data = await response.json()
           setPosts(data)
@@ -26,14 +29,16 @@ export const Posts: React.FC = () => {
 
   return (
     <div>
-      {
-        posts.map((post, index) => (
-          <div key={index} className="post" style={{ padding: '20px', border: '1px' }}>
-            <b>{post.title}</b>
-            <p>{post.body}</p>
-          </div>
-        ))
-      }
+      {posts.map((post, index) => (
+        <div
+          key={index}
+          className="post"
+          style={{ padding: '20px', border: '1px' }}
+        >
+          <b>{post.title}</b>
+          <p>{post.body}</p>
+        </div>
+      ))}
     </div>
   )
 }

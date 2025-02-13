@@ -1,6 +1,6 @@
-import {useSearchParams} from "react-router-dom";
-import React, {useEffect, useMemo, useState} from "react";
-import dictionaryListData from "../../data/dictionary.json";
+import { useSearchParams } from 'react-router-dom'
+import React, { useEffect, useMemo, useState } from 'react'
+import dictionaryListData from '../../data/dictionary.json'
 
 const dictionaryList = dictionaryListData
 
@@ -9,8 +9,10 @@ export default function Search() {
   const [searchTitle, setSearchTitle] = useState('')
 
   const searchResult = useMemo(() => {
-    return searchTitle ? dictionaryList.filter((item) => item.title.includes(searchTitle)) : []
-  }, [searchTitle]);
+    return searchTitle
+      ? dictionaryList.filter((item) => item.title.includes(searchTitle))
+      : []
+  }, [searchTitle])
 
   function findByTitle() {
     setSearchParams({
@@ -31,13 +33,21 @@ export default function Search() {
   return (
     <div>
       <div className="search">
-        <input value={searchTitle} type="text" placeholder="Введите заголовок" onChange={onSearchTitleChange} />
+        <input
+          value={searchTitle}
+          type="text"
+          placeholder="Введите заголовок"
+          onChange={onSearchTitleChange}
+        />
         <button onClick={findByTitle}>Найти</button>
       </div>
 
       <div className="result">
-        {searchResult.map(item => (
-          <div key={item.id} style={{ padding: '10px', border: '1px', margin: '5px' }}>
+        {searchResult.map((item) => (
+          <div
+            key={item.id}
+            style={{ padding: '10px', border: '1px', margin: '5px' }}
+          >
             <div className="title">{item.title}</div>
             <div className="author">{item.author}</div>
           </div>
