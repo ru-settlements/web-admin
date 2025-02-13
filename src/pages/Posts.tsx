@@ -1,11 +1,10 @@
-import React, {useEffect, useMemo, useState} from "react";
+import React, {useEffect, useState} from "react";
 
 export const Posts: React.FC = () => {
   const [posts, setPosts] = useState([])
 
-  const abortController = useMemo(() => new AbortController(), [])
-
   useEffect(() => {
+    const abortController = new AbortController()
     const fetchData = async () => {
       try {
         const response = await fetch('https://jsonplaceholder.typicode.com/posts', { signal: abortController.signal })
@@ -23,7 +22,7 @@ export const Posts: React.FC = () => {
     return () => {
       abortController.abort()
     }
-  }, [abortController])
+  }, [])
 
   return (
     <div>
