@@ -1,10 +1,10 @@
 import { useSearchParams } from 'react-router-dom'
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { FC, useEffect, useMemo, useState } from 'react'
 import dictionaryListData from '../../data/dictionary.json'
 
 const dictionaryList = dictionaryListData
 
-export default function Search() {
+export const Search: FC = () => {
   const [searchParams, setSearchParams] = useSearchParams()
   const [searchTitle, setSearchTitle] = useState('')
 

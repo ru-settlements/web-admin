@@ -1,8 +1,9 @@
 import { Link, Outlet } from 'react-router-dom'
 import dictionaryListData from '../data/dictionary.json'
+import { FC } from 'react'
 const dictionaryList = dictionaryListData
 
-export default function Dictionaries() {
+export const Dictionaries: FC = () => {
   return (
     <>
       <div>Dictionaries page</div>
