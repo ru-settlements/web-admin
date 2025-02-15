@@ -1,5 +1,5 @@
 import { Link, Outlet } from 'react-router-dom'
-import dictionaryListData from '../data/dictionary.json'
+import dictionaryListData from '@/data/dictionary.json'
 import { FC } from 'react'
 const dictionaryList = dictionaryListData
 

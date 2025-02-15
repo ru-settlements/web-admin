@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom'
-import dictionaryListData from '../../data/dictionary.json'
+import dictionaryListData from '@/data/dictionary.json'
 import { FC } from 'react'
 
-export const DictionaryId: FC = () => {
+export const DictionariesId: FC = () => {
   const { dictionaryId } = useParams()
 
   const dictionaryData = dictionaryListData.find(
