@@ -1,7 +1,6 @@
-import { FC } from 'react'
 import { Outlet } from 'react-router-dom'
 
-export const RootLayout: FC = () => {
+export const RootLayout = () => {
   return (
     <div>
       header aside another

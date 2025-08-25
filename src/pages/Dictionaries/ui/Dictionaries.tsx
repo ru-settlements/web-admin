@@ -1,9 +1,9 @@
 import { Link, Outlet } from 'react-router-dom'
 import dictionaryListData from '@/data/dictionary.json'
-import { FC } from 'react'
+import { Button } from '@/components/ui/button.tsx'
 const dictionaryList = dictionaryListData
 
-export const Dictionaries: FC = () => {
+export const Dictionaries = () => {
   return (
     <>
       <div>Dictionaries page</div>
@@ -18,7 +18,9 @@ export const Dictionaries: FC = () => {
       <ul>
         {dictionaryList.map((item) => (
           <li key={item.id}>
-            <Link to={`/dictionaries/${item.id}`}>{item.title}</Link>
+            <Button>
+              <Link to={`/dictionaries/${item.id}`}>{item.title}</Link>
+            </Button>
           </li>
         ))}
       </ul>
