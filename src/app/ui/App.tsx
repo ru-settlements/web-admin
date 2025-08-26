@@ -1,5 +1,6 @@
 import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
 import '@/shared/styles/global.scss'
 import { ROOT_ROUTES } from '@/app/config/routes/rootRoute'
 
