@@ -1,5 +1,3 @@
-import { FC } from 'react'
-
-export const Error404: FC = () => {
+export const Error404 = () => {
   return <div>404</div>
 }
